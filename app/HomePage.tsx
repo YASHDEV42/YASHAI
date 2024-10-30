@@ -3,7 +3,7 @@
 import { useChat } from "ai/react";
 
 export default function HomePage() {
-  const { messages, setMessages, setInput, handleSubmit, append } = useChat();
+  const { messages, setMessages, append } = useChat();
   console.log(messages);
 
   const handleButtonSubmit = (mood: string) => {
@@ -11,13 +11,13 @@ export default function HomePage() {
     setMessages([
       ...messages,
       {
-        id: messages.length,
+        id: messages.length.toString(),
         role: "user",
         content: "give me a qoute :" + mood,
       },
     ]);
     append({
-      id: messages.length + 1,
+      id: messages.length.toString(),
       role: "assistant",
       content: "I am thinking...",
     });
