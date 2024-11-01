@@ -3,6 +3,9 @@
 import { useChat } from "ai/react";
 
 export default function HomePage() {
+  /*
+  here we removed setInput to deploy the app
+  */
   const { messages, setMessages, append } = useChat();
   console.log(messages);
 
